@@ -1,11 +1,13 @@
 package ru.otus.spring.Lesson1;
 
+import lombok.Getter;
 import org.springframework.core.io.ClassPathResource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+@Getter
 public class LoadFile {
 
     private final String file;
@@ -26,5 +28,8 @@ public class LoadFile {
             throw new RuntimeException(e);
         }
     }
+
+
+
 
 }
