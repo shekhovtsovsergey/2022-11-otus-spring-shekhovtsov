@@ -1,18 +1,20 @@
-package ru.otus.spring.Lesson1;
+package ru.otus.spring.Lesson1.Model;
 
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
 import static junit.framework.Assert.assertEquals;
 
-@DisplayName("Класс LoadFile")
-public class LoadFileTest {
+@DisplayName("Класс QuestionTest")
+public class QuestionTest {
+
 
     @DisplayName("Класс LoadFile")
     @Test
     void shouldHaveCorrectConstructor(){
-        LoadFile loadFile = new LoadFile("question.csv");
-        assertEquals("question.csv", loadFile.getFile());
+        Question question = new Question("hello");
+        assertEquals("hello", question.getValue());
 
     }
 
