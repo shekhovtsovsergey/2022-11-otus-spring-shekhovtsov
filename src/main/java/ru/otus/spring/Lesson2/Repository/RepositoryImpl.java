@@ -1,7 +1,7 @@
-package ru.otus.spring.Lesson1.Repository;
+package ru.otus.spring.Lesson2.Repository;
 
-import ru.otus.spring.Lesson1.Model.Answer;
-import ru.otus.spring.Lesson1.Model.Question;
+import ru.otus.spring.Lesson2.Model.Answer;
+import ru.otus.spring.Lesson2.Model.Question;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -36,13 +36,10 @@ public class RepositoryImpl implements Repository{
         return repo;
     }
 
+
     @Override
-    public void print() {
-        for (Question name: repo.keySet()){
-            String key = name.toString();
-            String value = repo.get(name).toString();
-            System.out.println(key + " " + value);
-        }
+    public Map<Question, Answer> getRepo() {
+        return repo;
     }
 
 

@@ -1,4 +1,4 @@
-package ru.otus.spring.Lesson1.Model;
+package ru.otus.spring.Lesson2.Model;
 
 
 import org.junit.jupiter.api.DisplayName;

@@ -1,8 +1,8 @@
-package ru.otus.spring.Lesson1;
+package ru.otus.spring.Lesson2;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.otus.spring.Lesson1.Repository.RepositoryImpl;
-import ru.otus.spring.Lesson1.Service.PrinterImpl;
+import ru.otus.spring.Lesson2.Repository.RepositoryImpl;
+import ru.otus.spring.Lesson2.Service.PrinterImpl;
 
 public class Main {
 
@@ -12,6 +12,5 @@ public class Main {
         PrinterImpl printer = context.getBean("printer", PrinterImpl.class);
         repository.loadCsv();
         printer.print();
-        context.close();
     }
 }

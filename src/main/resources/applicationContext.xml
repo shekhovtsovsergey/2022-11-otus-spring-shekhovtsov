@@ -8,12 +8,12 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="repository"
-          class="ru.otus.spring.Lesson1.Repository.RepositoryImpl">
+          class="ru.otus.spring.Lesson2.Repository.RepositoryImpl">
         <constructor-arg value="questions.csv"/>
     </bean>
 
     <bean id="printer"
-          class="ru.otus.spring.Lesson1.Service.PrinterImpl">
+          class="ru.otus.spring.Lesson2.Service.PrinterImpl">
         <constructor-arg ref="repository"/>
     </bean>
 

@@ -1,4 +1,5 @@
-package ru.otus.spring.Lesson1.Service;
+package ru.otus.spring.Lesson2.Service;
+
 
 public interface Printer {
 
