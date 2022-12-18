@@ -1,20 +1,24 @@
 package ru.otus.spring.Lesson2.Repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 import ru.otus.spring.Lesson2.Model.Answer;
 import ru.otus.spring.Lesson2.Model.Question;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@Component
+@PropertySource("classpath:application.properties")
 public class RepositoryImpl implements Repository{
 
     private final Map<Question, Answer> repo = new HashMap<>();
-    private final String file;
+    @Value("${resourceName}")
+    private String file;
 
-    public RepositoryImpl(String file) {
-        this.file = file;
-    }
+
 
     @Override
     public Map<Question, Answer> loadCsv() {
