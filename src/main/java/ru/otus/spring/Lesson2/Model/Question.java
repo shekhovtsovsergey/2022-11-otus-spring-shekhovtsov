@@ -9,12 +9,12 @@ import lombok.Setter;
 @RequiredArgsConstructor
 public class Question {
 
-    private final String value;
+    private final String question;
+    private final String correctAnswer;
 
 
     public String toString() {
-        return value;
+        return getQuestion();
     }
-
 
 }

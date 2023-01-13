@@ -2,15 +2,14 @@ package ru.otus.spring.Lesson2.Model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+
+import java.util.List;
 
 @Getter
-@Setter
 @RequiredArgsConstructor
-public class Student {
 
+public class Ticket {
 
-    private final String firstName;
-
+    private final List<Question> questions;
 
 }
