@@ -3,8 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>ru.otus</groupId>
   <artifactId>_2022-11-otus-spring-shekhovtsov</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <version>1.0</version>
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
   <name>_2022-11-otus-spring-shekhovtsov Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -14,36 +18,98 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-core</artifactId>
       <version>5.3.24</version>
     </dependency>
-
-
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-beans</artifactId>
       <version>5.3.24</version>
     </dependency>
-
-
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>5.3.24</version>
+      <version>5.2.6.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.22</version>
+      <scope>compile</scope>
+    </dependency>
+
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <version>4.8.1</version>
+          <scope>test</scope>
+      </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>3.23.1</version>
+      <scope>test</scope>
     </dependency>
 
 
-
-
-
   </dependencies>
+
+
   <build>
-    <finalName>_2022-11-otus-spring-shekhovtsov</finalName>
+    <finalName>2022-11-otus-spring-shekhovtsov</finalName>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>ru.otus.spring.Lesson2.Main</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.2.1</version>
+    <configuration>
+    </configuration>
+    <executions>
+      <execution>
+        <phase>package</phase>
+        <goals>
+          <goal>shade</goal>
+        </goals>
+      </execution>
+    </executions>
+  </plugin>
+  </plugins>
   </build>
 </project>
+
+
